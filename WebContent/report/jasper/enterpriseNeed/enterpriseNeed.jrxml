@@ -1,0 +1,896 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="enterpriseNeed" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c047ea03-decc-451e-9630-b59b08bca93a">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="2165"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="ffb57cb9-1477-44a9-9d91-d215a1abf395"/>
+	<subDataset name="Table Dataset 2" uuid="da4920fa-4750-4e24-b6a3-fc6d52973e7d"/>
+	<parameter name="enterpriseNeedId" class="java.lang.Long">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["D:\\SYSVIN\\2016\\i-ACE鏈結產學媒合平台\\iReport\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT ei.NAME, ei.COMPANY_ID, ei.MAIN_PRODUCT, ei.PHASE2, ei.PHASE3, ei.ADDRESS,
+ei.PERSON_IN_CHARGE_NAME, ei.PERSON_IN_CHARGE_JOBTITLE, ei.PERSON_IN_CHARGE_PHONE, ei.PERSON_IN_CHARGE_EMAIL,
+ei.INTERVIEWEE_NAME, ei.INTERVIEWEE_JOBTITLE, ei.INTERVIEWEE_PHONE, ei.INTERVIEWEE_EMAIL,
+
+ert_od.NAME AS RT_phASe1, ert.PHASE2 AS RT_PHASE2, ert.PHASE3 AS RT_PHASE3,
+ert.INQUIRED_ORG AS INQUIRED_ORG, ert.INTERVIEW_DATE, ert.RECORD_BY,
+
+es_ohts.NAME AS HAD_TEC_SRC, es.HAD_TECH_SRC_RATION,
+es.HAS_COM_COOP_EXP, es.COOP_TOPIC, es.COOP_PROS, es.COOP_CONS,
+es.HAS_ACADEMIA_COOP_EXP, es.ACADEMIA_TOPIC, es.ACADEMIA_INTENTION, es.ACADEMIA_PROS, es.ACADEMIA_CONS,
+es_ocm.NAME as COOP_MODE, es.SPECIFIC_TOPIC, es.OTHER_COOP_TARGET,
+
+eac.COOP_SCHOOL, eac.CURRENT_COOP_PROJECT_TOPIC, eac.WANTED_COOP_SCHOOL_TOPIC, eac.SUGGESTION
+
+FROM ENTERPRISE_INFO ei
+LEFT JOIN OPT_COM_LOCATION ocl on ocl.id = ei.OPT_COM_LOCATION_ID
+LEFT JOIN ENTERPRISE_REQUIRE_TECH ert on ert.ENTERPRISE_INFO_ID = ei.ID
+LEFT JOIN OPT_DOMAIN ert_od on ert.PHASE1_DOMAIN_ID = ert_od.ID
+LEFT JOIN ENTERPRISE_SITUATION es on es.ENTERPRISE_INFO_ID = ei.ID
+LEFT JOIN OPT_HAD_TEC_SRC es_ohts on es.OPT_HAD_TEC_SRC_ID = es_ohts.ID
+LEFT JOIN OPT_COOPERATE_MODE es_ocm on es.OPT_COOPERATE_MODE_ID = es_ocm.ID
+LEFT JOIN ENTERPRISE_ACADEMIA_COOP eac on eac.ENTERPRISE_INFO_ID = ei.ID
+
+where ei.id = $P{enterpriseNeedId}]]>
+	</queryString>
+	<field name="NAME" class="java.lang.String"/>
+	<field name="COMPANY_ID" class="java.lang.String"/>
+	<field name="MAIN_PRODUCT" class="java.lang.String"/>
+	<field name="PHASE2" class="java.lang.String"/>
+	<field name="PHASE3" class="java.lang.String"/>
+	<field name="ADDRESS" class="java.lang.String"/>
+	<field name="PERSON_IN_CHARGE_NAME" class="java.lang.String"/>
+	<field name="PERSON_IN_CHARGE_JOBTITLE" class="java.lang.String"/>
+	<field name="PERSON_IN_CHARGE_PHONE" class="java.lang.String"/>
+	<field name="PERSON_IN_CHARGE_EMAIL" class="java.lang.String"/>
+	<field name="INTERVIEWEE_NAME" class="java.lang.String"/>
+	<field name="INTERVIEWEE_JOBTITLE" class="java.lang.String"/>
+	<field name="INTERVIEWEE_PHONE" class="java.lang.String"/>
+	<field name="INTERVIEWEE_EMAIL" class="java.lang.String"/>
+	<field name="RT_PHASE1" class="java.lang.String"/>
+	<field name="RT_PHASE2" class="java.lang.String"/>
+	<field name="RT_PHASE3" class="java.lang.String"/>
+	<field name="INQUIRED_ORG" class="java.lang.String"/>
+	<field name="INTERVIEW_DATE" class="java.sql.Timestamp"/>
+	<field name="RECORD_BY" class="java.lang.String"/>
+	<field name="HAD_TEC_SRC" class="java.lang.String"/>
+	<field name="HAD_TECH_SRC_RATION" class="java.math.BigDecimal"/>
+	<field name="HAS_COM_COOP_EXP" class="java.lang.String"/>
+	<field name="COOP_TOPIC" class="java.lang.String"/>
+	<field name="COOP_PROS" class="java.lang.String"/>
+	<field name="COOP_CONS" class="java.lang.String"/>
+	<field name="HAS_ACADEMIA_COOP_EXP" class="java.lang.String"/>
+	<field name="ACADEMIA_TOPIC" class="java.lang.String"/>
+	<field name="ACADEMIA_INTENTION" class="java.lang.String"/>
+	<field name="ACADEMIA_PROS" class="java.lang.String"/>
+	<field name="ACADEMIA_CONS" class="java.lang.String"/>
+	<field name="COOP_MODE" class="java.lang.String"/>
+	<field name="SPECIFIC_TOPIC" class="java.lang.String"/>
+	<field name="OTHER_COOP_TARGET" class="java.lang.String"/>
+	<field name="COOP_SCHOOL" class="java.lang.String"/>
+	<field name="CURRENT_COOP_PROJECT_TOPIC" class="java.lang.String"/>
+	<field name="WANTED_COOP_SCHOOL_TOPIC" class="java.lang.String"/>
+	<field name="SUGGESTION" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="37" splitType="Stretch">
+			<staticText>
+				<reportElement x="167" y="0" width="195" height="27" forecolor="#000000" backcolor="#000000" uuid="9015f20f-b85c-438e-87d1-9cf99f006157"/>
+				<box topPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="標楷體" size="16" isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[企業需求單]]></text>
+			</staticText>
+			<textField pattern="yyyy/MM/dd">
+				<reportElement x="502" y="9" width="53" height="18" uuid="be485b86-910e-4599-8070-c5cb663c47ff"/>
+				<textElement verticalAlignment="Bottom"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="448" y="9" width="54" height="18" forecolor="#000000" backcolor="#000000" uuid="3467c848-14b1-4165-b849-427c11b1cd8a"/>
+				<box topPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="標楷體" size="10" isBold="true" isItalic="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[列印日期：]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="60" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="20" forecolor="#FFFFFF" backcolor="#0066CC" uuid="c86090f6-1907-4d3f-9812-f263ee01e054"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="標楷體" size="12" isBold="true" isItalic="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[企業基本資料]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="20" width="150" height="20" uuid="fa997a71-daad-446f-b4e5-b9a13d475f76"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[企業名稱]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="40" width="410" height="20" uuid="6bc56772-3ef7-426f-a0fb-86c328286fcf"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="標楷體" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NAME}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="420" y="20" width="135" height="20" uuid="5d6b6a00-b839-4146-81a8-ba1d1b275d2f"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[統一編號]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="420" y="40" width="135" height="20" uuid="29e0634e-f07c-4a49-8096-afb455ab26b0"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="標楷體" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{COMPANY_ID}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="41">
+			<staticText>
+				<reportElement x="0" y="0" width="150" height="20" uuid="96f4925e-f25a-4d2d-8b3f-753483e7a669"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[公司目前產品/服務項目]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="20" width="555" height="20" isPrintWhenDetailOverflows="true" uuid="6dad2f4b-5eac-4c49-806d-e174f5985258"/>
+				<box topPadding="2" bottomPadding="2"/>
+				<textElement>
+					<font fontName="標楷體" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{MAIN_PRODUCT}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="60">
+			<staticText>
+				<reportElement x="0" y="0" width="150" height="20" forecolor="#666666" uuid="f9573d11-702b-4fdc-aa77-14abb2675a1f"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="標楷體" size="14" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[產業類別]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="20" width="71" height="20" uuid="3f208c01-b308-47b7-bfd4-4b2c4c171208"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[(一階)領域]]></text>
+			</staticText>
+			<subreport>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="40" width="555" height="20" uuid="dc9bcae9-d83d-4244-91e4-3712b746c7c5"/>
+				<subreportParameter name="enterpriseNeedId">
+					<subreportParameterExpression><![CDATA[$P{enterpriseNeedId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "enterpriseDomain.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="40">
+			<staticText>
+				<reportElement x="0" y="0" width="92" height="20" uuid="5b956334-2450-4f8b-8074-421a24edf93d"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[(二階)發展方向]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="20" width="555" height="20" isPrintWhenDetailOverflows="true" uuid="005e1900-3a95-41c0-a8af-905c95f2d29a"/>
+				<box topPadding="2" bottomPadding="2"/>
+				<textElement>
+					<font fontName="標楷體" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PHASE2}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="40">
+			<staticText>
+				<reportElement x="0" y="0" width="92" height="20" uuid="01786b0e-efe6-42ea-b91f-ec2665d25b70"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[(三階)應用端]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="20" width="555" height="20" isPrintWhenDetailOverflows="true" uuid="78878555-864c-451a-9825-8bf6d0136588"/>
+				<textElement>
+					<font fontName="標楷體" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PHASE3}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="120">
+			<staticText>
+				<reportElement x="0" y="40" width="92" height="20" uuid="c48daa07-d9c4-4d7e-9ed5-82f3c6970f12"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[負責人姓名]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="60" width="130" height="20" uuid="1249d116-1bbe-4ae6-94fe-5348a4d40a85"/>
+				<textElement>
+					<font fontName="標楷體" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PERSON_IN_CHARGE_NAME}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="140" y="40" width="92" height="20" uuid="9fa93d84-a25e-4d93-8908-50e0d5c2594a"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[職稱]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="140" y="60" width="130" height="20" uuid="af18d268-9a75-464e-a40b-fcaec55c7717"/>
+				<textElement>
+					<font fontName="標楷體" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PERSON_IN_CHARGE_JOBTITLE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="40" width="92" height="20" uuid="50b0589f-bcf6-4f5b-a62c-dafff5647e7f"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[電話]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="280" y="60" width="130" height="20" uuid="09ea0506-8ea0-4561-a6d3-8324887db0f1"/>
+				<textElement>
+					<font fontName="標楷體" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PERSON_IN_CHARGE_PHONE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="420" y="40" width="92" height="20" uuid="d4133c54-dae9-4c11-bbb5-731367e2aac8"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Email]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="420" y="60" width="130" height="20" uuid="f482a106-c67f-4c1e-a1c6-103eeb36141f"/>
+				<textElement>
+					<font fontName="標楷體" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PERSON_IN_CHARGE_EMAIL}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="80" width="92" height="20" uuid="724058ab-e0e3-4150-a1b7-831a8ae2059d"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[電話]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="80" width="92" height="20" uuid="fea70a3a-e8c3-4893-91cc-c5480c059384"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[受訪人姓名]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="140" y="80" width="92" height="20" uuid="d07c9e9c-9980-44d1-9901-06decdd5bcbb"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[職稱]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="420" y="80" width="92" height="20" uuid="16628de9-4edc-4a80-87af-8594412b07d7"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Email]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="420" y="100" width="130" height="20" uuid="f1c9e505-2102-48ab-88df-4c9f5614d7a5"/>
+				<textElement>
+					<font fontName="標楷體" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{INTERVIEWEE_EMAIL}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="140" y="100" width="130" height="20" uuid="b41dbe23-1f80-498f-8f85-6d996f226e71"/>
+				<textElement>
+					<font fontName="標楷體" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{INTERVIEWEE_JOBTITLE}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="280" y="100" width="130" height="20" uuid="bb86a053-f4cb-43a8-8720-a93de8a89b6e"/>
+				<textElement>
+					<font fontName="標楷體" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{INTERVIEWEE_PHONE}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="100" width="130" height="20" uuid="0e22d9a2-308f-47d0-b27e-57b8f9100a89"/>
+				<textElement>
+					<font fontName="標楷體" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{INTERVIEWEE_NAME}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="92" height="20" uuid="a6acfc6a-fc53-47a1-b96f-37c59402ef07"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[公司地址]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="20" width="555" height="20" uuid="93cf9a74-52c0-4a48-837c-fe1d1293e60c"/>
+				<textElement>
+					<font fontName="標楷體" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ADDRESS}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="100">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="20" width="555" height="20" forecolor="#FFFFFF" backcolor="#0066CC" uuid="d1ff2812-197b-496f-898f-f50ede2d6aa5"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="標楷體" size="12" isBold="true" isItalic="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[技術需求資料]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="40" width="302" height="20" forecolor="#666666" uuid="103f510c-9c42-4778-bb84-6c2868296825"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="標楷體" size="14" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[未來研發的技術若突破預期可應用範圍及產品]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="60" width="71" height="20" uuid="3780dd7f-a942-4471-8cda-e6c79021632a"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[(一階)領域]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="80" width="555" height="20" isPrintWhenDetailOverflows="true" uuid="41734bc2-8028-480b-9c2c-b3891c349a05"/>
+				<textElement>
+					<font fontName="標楷體" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{RT_PHASE1}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="40">
+			<staticText>
+				<reportElement x="0" y="0" width="92" height="20" uuid="f8766cef-a256-4ebc-ab9d-b7539a6d87de"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[(二階)發展方向]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="20" width="555" height="20" isPrintWhenDetailOverflows="true" uuid="f68aa8a7-af2d-42a8-aeae-08847dfaa830"/>
+				<box topPadding="2" bottomPadding="2"/>
+				<textElement>
+					<font fontName="標楷體" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{RT_PHASE2}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="51">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="20" width="555" height="20" isPrintWhenDetailOverflows="true" uuid="a62adf2b-1e38-41b1-aa1c-5f3ea001556b"/>
+				<textElement>
+					<font fontName="標楷體" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PHASE3}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="92" height="20" uuid="28301d03-01b3-46a0-99fc-f2107ba1f3db"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[(三階)應用端]]></text>
+			</staticText>
+		</band>
+		<band height="40">
+			<staticText>
+				<reportElement x="0" y="0" width="220" height="20" uuid="24cac9f6-552e-4e95-bb07-70f0104efc68"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[已經探詢過的單位(上述技術需求)]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="20" width="555" height="20" isPrintWhenDetailOverflows="true" uuid="e3655f04-36ab-4feb-89fd-329c5395d7d9"/>
+				<textElement>
+					<font fontName="標楷體" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{INQUIRED_ORG}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="40">
+			<staticText>
+				<reportElement x="0" y="0" width="270" height="20" uuid="76af8de9-37ba-4b4c-9add-d4b7bfa26dd5"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[訪談日期]]></text>
+			</staticText>
+			<textField pattern="yyyy/MM/dd" isBlankWhenNull="true">
+				<reportElement x="0" y="20" width="270" height="20" uuid="9e087218-1d2c-480e-b87c-1c9b3aac5565"/>
+				<textElement>
+					<font fontName="標楷體" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{INTERVIEW_DATE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="0" width="270" height="20" uuid="80e9c706-d2df-4b22-b43c-fe83285d22c3"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[記錄人]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="280" y="20" width="270" height="20" uuid="1d160843-edab-42d9-8d3e-3649319acc73"/>
+				<textElement>
+					<font fontName="標楷體" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{RECORD_BY}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="80">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="20" width="555" height="20" forecolor="#FFFFFF" backcolor="#0066CC" uuid="54bc2ced-f236-4190-87de-1398c32baab2"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="標楷體" size="12" isBold="true" isItalic="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[企業情況調查]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="40" width="270" height="20" uuid="029f61c9-be84-4f91-9cd1-41909c98424b"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[1.企業已有技術來源]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="60" width="270" height="20" uuid="72d7633a-b4d8-470b-89a0-74c2da5f36f0"/>
+				<textElement>
+					<font fontName="標楷體" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{HAD_TEC_SRC}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="40" width="270" height="20" uuid="0efab324-73f0-4e8c-b014-eab7eec82aad"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[比例]]></text>
+			</staticText>
+			<textField pattern="#,##0.0 %" isBlankWhenNull="true">
+				<reportElement x="280" y="60" width="270" height="20" uuid="041f90f9-7ed3-43f6-939d-6147eb75dffa"/>
+				<textElement>
+					<font fontName="標楷體" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{HAD_TECH_SRC_RATION}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="90">
+			<staticText>
+				<reportElement x="0" y="10" width="220" height="20" forecolor="#666666" uuid="ce1d5ea8-9884-45ea-b91b-60342aa15c50"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="標楷體" size="14" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[2.與法人機構，技術合作的意願]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="30" width="302" height="20" uuid="f90124af-fffc-42aa-b865-84446a598bdd"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[2-1.是否有過跟法人機構技術合作(含技轉)的經驗？]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement x="302" y="30" width="253" height="20" uuid="94eff3e2-a583-4a5d-ae3c-abd1afa65015"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="標楷體" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{HAS_COM_COOP_EXP}.equals("T") ? "是" : "否"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="50" width="118" height="20" uuid="688bb1e1-d7d8-4117-85c9-bcf8fb00b47c"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[2-2.合作題目為何？]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="70" width="555" height="20" isPrintWhenDetailOverflows="true" uuid="d44a4406-907b-4c8e-9e2b-5acb92bc91ef"/>
+				<textElement>
+					<font fontName="標楷體" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{COOP_TOPIC}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="40">
+			<staticText>
+				<reportElement x="0" y="0" width="232" height="20" uuid="11cac34e-b7c6-4227-8725-d3827358fe83"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[2-3.請闡述與法人機構技轉的優、缺點？]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="20" width="33" height="20" uuid="87cbbc07-9831-47ff-99dd-91ed38b6f8ce"/>
+				<textElement verticalAlignment="Top" markup="none">
+					<font fontName="標楷體" size="12"/>
+				</textElement>
+				<text><![CDATA[優點:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="33" y="20" width="522" height="20" isPrintWhenDetailOverflows="true" uuid="1229c611-00e3-4051-8897-aec61b8e33d4"/>
+				<textElement>
+					<font fontName="標楷體" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{COOP_PROS}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="20">
+			<staticText>
+				<reportElement x="0" y="0" width="33" height="20" uuid="3524500a-75ae-4d27-a8d2-bb834f236a3d"/>
+				<textElement verticalAlignment="Top" markup="none">
+					<font fontName="標楷體" size="12"/>
+				</textElement>
+				<text><![CDATA[缺點:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="33" y="0" width="522" height="20" isPrintWhenDetailOverflows="true" uuid="934aaee8-c79f-4260-be0e-2f4b208fd4e1"/>
+				<textElement>
+					<font fontName="標楷體" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{COOP_CONS}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="90">
+			<staticText>
+				<reportElement x="0" y="30" width="225" height="20" uuid="aed15d40-c0b3-4c14-9347-5d5ba02679ae"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[3-1.是否有過跟學界技術合作的經驗？]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="10" width="270" height="20" forecolor="#666666" uuid="a8d1a99b-d7a4-4480-95f2-9bb0adce62b0"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="標楷體" size="14" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[3.與學界，技術合作的意願 & 合作模式]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement x="225" y="30" width="323" height="20" uuid="5444136f-cf00-49d4-a7b8-4293877d8686"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="標楷體" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{HAS_ACADEMIA_COOP_EXP}.equals("T") ? "是" : "否"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="50" width="118" height="20" uuid="f6f5eab2-59a5-42b3-b699-164839b8fa0f"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[3-2.合作題目為何？]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="70" width="555" height="20" isPrintWhenDetailOverflows="true" uuid="df4703eb-089d-4985-a212-9469a97e41fe"/>
+				<textElement>
+					<font fontName="標楷體" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ACADEMIA_TOPIC}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="40">
+			<staticText>
+				<reportElement x="0" y="0" width="167" height="20" uuid="3454f22f-638b-4c24-92c6-dfcfb6a72590"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[3-3.對於跟學界合作的意願？]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="20" width="555" height="20" isPrintWhenDetailOverflows="true" uuid="08dc0001-1fa1-4730-907a-a097f1d8e6cb"/>
+				<textElement>
+					<font fontName="標楷體" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ACADEMIA_INTENTION}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="40">
+			<staticText>
+				<reportElement x="0" y="0" width="232" height="20" uuid="fd01afe8-beb6-4c24-926a-b0b11a63d2d8"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[3-4.請闡述與學界技術合作的優、缺點？]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="20" width="33" height="20" uuid="53505c9e-b7ab-4c6d-aaf4-2d7b53b2e422"/>
+				<textElement verticalAlignment="Top" markup="none">
+					<font fontName="標楷體" size="12"/>
+				</textElement>
+				<text><![CDATA[優點:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="33" y="20" width="522" height="20" isPrintWhenDetailOverflows="true" uuid="54857df5-3e1b-43d7-bc8b-e490802f9c41"/>
+				<textElement>
+					<font fontName="標楷體" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ACADEMIA_PROS}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="20">
+			<staticText>
+				<reportElement x="0" y="0" width="33" height="20" uuid="e65abbcc-28e5-4c76-8e34-3822507baf2d"/>
+				<textElement verticalAlignment="Top" markup="none">
+					<font fontName="標楷體" size="12"/>
+				</textElement>
+				<text><![CDATA[缺點:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="33" y="0" width="522" height="20" isPrintWhenDetailOverflows="true" uuid="1616fd6f-0ccf-40a5-9ec0-0da58268c44d"/>
+				<textElement>
+					<font fontName="標楷體" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ACADEMIA_CONS}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="61">
+			<staticText>
+				<reportElement x="0" y="0" width="251" height="20" uuid="a5f6cf09-6935-4aaa-bf9d-58c3d3a3b166"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[3-5.與學校合作，是否有特定的合作模式？]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement x="251" y="0" width="304" height="20" uuid="35a1fc66-907b-4559-9003-e8248f692ab8"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="標楷體" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{COOP_MODE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="20" width="280" height="20" uuid="66e25280-a798-4a3c-ad35-a87e1b29e0e9"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[3-6.若以新創方式合作，是否有特定主題或方向？]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="40" width="555" height="20" isPrintWhenDetailOverflows="true" uuid="f130226f-2f54-49c9-acbc-03a363c6bc4f"/>
+				<textElement>
+					<font fontName="標楷體" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{SPECIFIC_TOPIC}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="50">
+			<staticText>
+				<reportElement x="0" y="10" width="292" height="20" forecolor="#666666" uuid="8bd46193-28f6-48d9-8da5-8e2fce0168d7"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="標楷體" size="14" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[4.是否有其他合作對象(非學術或研究單位)]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="30" width="555" height="20" isPrintWhenDetailOverflows="true" uuid="f833d354-ad76-44d6-b349-7ea2b32bdcad"/>
+				<textElement>
+					<font fontName="標楷體" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{OTHER_COOP_TARGET}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="100">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="20" width="555" height="20" forecolor="#FFFFFF" backcolor="#0066CC" uuid="7de1baf0-81cc-4506-92b4-45dcbaa7dda2"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="標楷體" size="12" isBold="true" isItalic="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[產學合作]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="40" width="82" height="20" forecolor="#666666" uuid="999186cb-4aa6-4287-b3a8-df63a8c24ddb"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="標楷體" size="14" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[5.合作對象]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="60" width="205" height="20" uuid="5642ed00-3745-4959-8832-14b156b6ab17"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[5-1傾向與哪些學校進行技術合作？]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="80" width="555" height="20" isPrintWhenDetailOverflows="true" uuid="b82a923a-6695-4e21-ab1d-30098e83fa91"/>
+				<textElement>
+					<font fontName="標楷體" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{COOP_SCHOOL}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="40">
+			<staticText>
+				<reportElement x="0" y="0" width="302" height="20" uuid="e8557651-564a-40d2-84c6-f70cf19d9abd"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[5-2.目前公司是否有其他的產學合作案正在進行中？]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="20" width="555" height="20" isPrintWhenDetailOverflows="true" uuid="120ead8e-81dd-4ae9-9a97-6347fd5df80b"/>
+				<textElement>
+					<font fontName="標楷體" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CURRENT_COOP_PROJECT_TOPIC}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="40">
+			<staticText>
+				<reportElement x="0" y="0" width="331" height="20" uuid="c95c2d1c-594c-4ae4-aa7e-905a3a17baa1"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[5-3.手上是否已有想合作的學校對象？我們可以協助鏈結。]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="20" width="555" height="20" isPrintWhenDetailOverflows="true" uuid="dfdb7df2-9f55-42b4-b13c-ee367832a8a7"/>
+				<textElement>
+					<font fontName="標楷體" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{WANTED_COOP_SCHOOL_TOPIC}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="50">
+			<staticText>
+				<reportElement x="0" y="10" width="555" height="20" forecolor="#666666" uuid="6a5f2ea5-dbe2-4f86-8bbf-6d03ebb930d1"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="標楷體" size="14" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[6.其他/對於科技部「運用法人鏈結產學合作計畫」有何建議？]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="30" width="555" height="20" isPrintWhenDetailOverflows="true" uuid="8a9c6aaf-47cb-467e-af93-efe56a160db8"/>
+				<textElement>
+					<font fontName="標楷體" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{SUGGESTION}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

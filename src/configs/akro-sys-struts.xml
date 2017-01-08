@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="sysRole" namespace="/sysRole" extends="struts-default, default">
+		<default-interceptor-ref name="iaceBackEnd"/>
+		<action name="init" class="akro.action.SysRoleAction" method="init">
+			<result>/WEB-INF/jsp/backend/sysRole/index.jsp</result>
+		</action>	
+		<action name="index" class="akro.action.SysRoleAction" method="index">
+			<result name="input">/WEB-INF/jsp/backend/sysRole/index.jsp</result>
+			<result name="success">/WEB-INF/jsp/backend/sysRole/index.jsp</result>			
+		</action>
+		<action name="create" class="akro.action.SysRoleAction" method="create">
+			<result name="success">/WEB-INF/jsp/backend/sysRole/create.jsp</result>	
+		</action>
+		<action name="createSubmit" class="akro.action.SysRoleAction" method="createSubmit">
+			<result name="input">/WEB-INF/jsp/backend/sysRole/create.jsp</result>
+			<result name="success">/WEB-INF/jsp/backend/sysRole/index.jsp</result>
+		</action>
+		<action name="update" class="akro.action.SysRoleAction" method="update">
+			<result name="input">/WEB-INF/jsp/backend/sysRole/index.jsp</result>
+			<result name="success">/WEB-INF/jsp/backend/sysRole/update.jsp</result>		
+		</action>
+		<action name="updateSubmit" class="akro.action.SysRoleAction" method="updateSubmit">		
+			<result name="input">/WEB-INF/jsp/backend/sysRole/update.jsp</result>
+			<result name="success">/WEB-INF/jsp/backend/sysRole/index.jsp</result>
+		</action>		
+	</package>
+	
+	<package name="sysUser" namespace="/sysUser" extends="struts-default, default">
+		<default-interceptor-ref name="iaceBackEnd"/>
+		<action name="init" class="akro.action.SysUserAction" method="init">
+			<result>/WEB-INF/jsp/backend/sysUser/index.jsp</result>
+		</action>	
+		<action name="index" class="akro.action.SysUserAction" method="index">
+			<result name="input">/WEB-INF/jsp/backend/sysUser/index.jsp</result>
+			<result name="success">/WEB-INF/jsp/backend/sysUser/index.jsp</result>			
+		</action>
+		<action name="create" class="akro.action.SysUserAction" method="create">
+			<result name="success">/WEB-INF/jsp/backend/sysUser/create.jsp</result>	
+		</action>
+		<action name="createSubmit" class="akro.action.SysUserAction" method="createSubmit">
+			<result name="input">/WEB-INF/jsp/backend/sysUser/create.jsp</result>
+			<result name="success">/WEB-INF/jsp/backend/sysUser/index.jsp</result>
+		</action>
+		<action name="update" class="akro.action.SysUserAction" method="update">
+			<result name="input">/WEB-INF/jsp/backend/sysUser/index.jsp</result>
+			<result name="success">/WEB-INF/jsp/backend/sysUser/update.jsp</result>		
+		</action>
+		<action name="updateSubmit" class="akro.action.SysUserAction" method="updateSubmit">		
+			<result name="input">/WEB-INF/jsp/backend/sysUser/update.jsp</result>
+			<result name="success">/WEB-INF/jsp/backend/sysUser/index.jsp</result>
+		</action>
+	</package>
+	
+	<package name="login" namespace="/login" extends="struts-default, default">
+		<action name="login" class="akro.action.SysUserAction" method="login">
+			<result>/WEB-INF/jsp/login.jsp</result>
+		</action>
+		<action name="loginSubmit" class="akro.action.SysUserAction" method="loginSubmit">
+			<interceptor-ref name="iaceSysLog"/>
+			<interceptor-ref name="defaultStack"/>
+
+			<result name="input">/WEB-INF/jsp/login.jsp</result>
+			<result name="success">/WEB-INF/jsp/backend/home/index.jsp</result>
+		</action>
+		<action name="logout" class="akro.action.SysUserAction"	method="logout">
+			<interceptor-ref name="iaceSysLog"/>
+			<interceptor-ref name="defaultStack"/>
+
+<!-- 			<result name="success">/WEB-INF/jsp/login.jsp</result> -->
+			<result type="redirectAction">
+	            <param name="actionName">init</param>
+	            <param name="namespace">/home</param>
+	        </result>
+		</action>	
+	</package>
+
+	
+	<package name="sysLog" namespace="/sysLog" extends="struts-default, default">
+		<default-interceptor-ref name="iaceBackEnd"/>
+		<action name="init" class="akro.action.SysLogAction" method="init">
+			<result>/WEB-INF/jsp/backend/sysLog/index.jsp</result>
+		</action>
+		<action name="index" class="akro.action.SysLogAction" method="index">
+			<result name="input">/WEB-INF/jsp/backend/sysLog/index.jsp</result>
+			<result name="success">/WEB-INF/jsp/backend/sysLog/index.jsp</result>
+		</action>
+		<action name="showDetail" class="akro.action.SysLogAction" method="showDetail">
+			<result name="input">/WEB-INF/jsp/backend/sysLog/index.jsp</result>
+			<result name="success">/WEB-INF/jsp/backend/sysLog/detail.jsp</result>
+		</action>
+	</package>
+
+</struts>

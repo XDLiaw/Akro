@@ -1,0 +1,9 @@
+/*--PAGE LIST--*/
+.pagination { font-size:15px; color:#888; width:100%; }
+.pagination ul { float:left; }
+.pagination li { margin:0 2px 5px 2px; display:inline-block; float:left; font-size:15px; }
+.pagination li input[type='submit'] { background: #ffffff; color:#074e7f; text-align:center; padding:5px 5px; border:none;}
+.pagination li input[type='submit']:hover { color:#890107; }
+.pagination li input[type='submit'].active { background: #074e7f; color:#FFF;}
+.pagination li input[type='submit'].active:hover { background: #890107; color:#FFF;}
+.pagination li select { padding: 2px 3px; }

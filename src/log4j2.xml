@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="info">
+	<Appenders>
+		<Console name="STDOUT" target="SYSTEM_OUT">
+			<PatternLayout pattern="%d{HH:mm:ss.SS} %-5p (%F:%L) --- %m%n" />
+		</Console>
+ 		<RollingFile name="DailyFile" fileName="iace-logs/log.txt" filePattern="iace-logs/log-%d{yyyyMMdd}.txt">
+<!--  	<RollingFile name="DailyFile" fileName="iace-logs/log.txt" filePattern="iace-logs/log-%d{yyyyMMdd-HH}~%i.txt">			 -->
+			<PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SS} %-5p [%t] (%C:%L) --- %m%n" />
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1" modulate="true" />
+				<SizeBasedTriggeringPolicy size="10 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="10"/>
+		</RollingFile>
+		<RollingFile name="error-log" fileName="iace-logs/errorlog.txt" filePattern="iace-logs/errorlog-%d{yyyyMMdd}.txt">
+			
+			<PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SS} %-5p [%t] (%C:%L) --- %m%n" />
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1" modulate="true" />
+				<SizeBasedTriggeringPolicy size="10 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="10"/>
+		</RollingFile>
+		
+<!--  		<File name="TEMP" fileName="temp.log"> -->
+<!-- 			<PatternLayout pattern="%d %-5p [%t] %C{2} (%F:%L) - %m%n" /> -->
+<!-- 		</File>  -->
+	</Appenders>
+
+	<Loggers>
+		<Logger name="com.opensymphony.xwork2" level="warn" />
+		<Logger name="org.apache.struts2" level="warn" />
+		<Root level="warn">
+			<AppenderRef ref="STDOUT" />
+			<AppenderRef ref="DailyFile" />
+			<AppenderRef ref="error-log" level="error"/>
+<!-- 			<AppenderRef ref="TEMP" /> -->
+		</Root>
+		<Logger name="com.opensymphony.xwork2.interceptor.AbstractInterceptor" level="debug" />
+		<Logger name="core.action.BaseAction" level="debug" />
+		<Logger name="core.service.BaseService" level="debug" />
+		<Logger name="iace.service.BaseExcelService" level="debug" />
+		<Logger name="core.dao.BaseDao" level="debug" />
+		<Logger name="lucene.integrationSearch.IndexInitService" level="debug" />
+		<Logger name="lucene.Test" level="debug" />
+		<Logger name="lucene.integrationSearch.Test" level="debug" />
+	</Loggers>
+</Configuration>

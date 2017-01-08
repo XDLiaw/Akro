@@ -1,0 +1,174 @@
+@charset "utf-8";
+.taiwanMapBox{
+	position: relative;
+	width: 210px;
+	margin:0 auto;
+}
+.taiwanMapBox_spacer{
+	height: 280px;
+	width: 210px;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index:100000001;
+}
+.taiwanMapBox_spacer img{
+	height: 280px;
+	width: 210px;
+	vertical-align: top;
+}
+.taiwanMapBox_taiwan{
+	background-image: url(../images/map/map_taiwan.png));
+	background-repeat: no-repeat;
+	background-position: left top;
+	height: 280px;
+	width: 210px;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index:100;
+}
+.taiwanMapBox_city{
+	background-repeat: no-repeat;
+	background-position: left top;
+	height: 280px;
+	width: 210px;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index:102;
+	display: none;
+}
+#taipei{
+	background-image: url(../images/map/map_taipei.png);
+}
+#collegeList-taipei{
+
+}
+#newtaipei{
+	background-image: url(../images/map/map_newtaipei.png);
+}
+#collegeList-newtaipei{
+
+}
+#keelung{
+	background-image: url(../images/map/map_keelung.png);
+}
+#collegeList-keelung{
+
+}
+#taoyuan{
+	background-image: url(../images/map/map_taoyuan.png);
+}
+#collegeList-taoyuan{
+
+}
+#hsinchuCounty{
+	background-image: url(../images/map/map_hsinchuCounty.png);
+}
+#collegeList-hsinchuCounty{
+
+}
+#hsinchuCity{
+	background-image: url(../images/map/map_hsinchuCity.png);
+}
+#collegeList-hsinchuCity{
+
+}
+#taichung{
+	background-image: url(../images/map/map_taichung.png);
+}
+#collegeList-taichung{
+
+}
+#nantou{
+	background-image: url(../images/map/map_nantou.png);
+}
+#collegeList-nantou{
+
+}
+#changhua{
+	background-image: url(../images/map/map_changhua.png);
+}
+#collegeList-changhua{
+
+}
+#miaoli{
+	background-image: url(../images/map/map_miaoli.png);
+}
+#collegeList-miaoli{
+
+}
+#chiayiCity{
+	background-image: url(../images/map/map_chiayiCity.png);
+}
+#collegeList-chiayiCity{
+
+}
+#chiayiCounty{
+	background-image: url(../images/map/map_chiayiCounty.png);
+}
+#collegeList-chiayiCounty{
+
+}
+#yunlin{
+	background-image: url(../images/map/map_yunlin.png);
+}
+#collegeList-yunlin{
+
+}
+#kaohsiung{
+	background-image: url(../images/map/map_kaohsiung.png);
+}
+#collegeList-kaohsiung{
+
+}
+#tainan{
+	background-image: url(../images/map/map_tainan.png);
+}
+#collegeList-tainan{
+
+}
+#pingtung{
+	background-image: url(../images/map/map_pingtung.png);
+}
+#collegeList-pingtung{
+
+}
+#hualien{
+	background-image: url(../images/map/map_hualien.png);
+}
+#collegeList-hualien{
+
+}
+#taitung{
+	background-image: url(../images/map/map_taitung.png);
+}
+#collegeList-taitung{
+
+}
+#ilan{
+	background-image: url(../images/map/map_ilan.png);
+}
+#collegeList-ilan{
+
+}
+#lianjiang{
+	background-image: url(../images/map/map_lianjiang.png);
+}
+#kinmen{
+	background-image: url(../images/map/map_kinmen.png);
+}
+#collegeList-kinmen{
+
+}
+#penghu{
+	background-image: url(../images/map/map_penghu.png);
+}
+#collegeList-penghu{
+
+}
+#collegeList-all{
+
+}
+

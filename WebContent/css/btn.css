@@ -1,0 +1,23 @@
+.btn-func { height:17px; padding-left:20px; margin:5px 5px 5px 0; line-height:17px; font-size:0.93em; display:inline-block; color:#175987; border:none; cursor:pointer; }
+.btn-func:hover { background-position: left -17px; color:#890107;}
+.btn-view { background:url(../images/icon_View.png) no-repeat left top; }
+.btn-edit { background:url(../images/icon_Edit.png) no-repeat left top; }
+.btn-del { background:url(../images/icon_Del.png) no-repeat left top; }
+.btn-print { background:url(../images/icon_Print.png) no-repeat left top; }
+.btn-copy { background:url(../images/icon_Copy.png) no-repeat left top; }
+.btn-export { background:url(../images/icon_Export.png) no-repeat left top; }
+
+.redBtn  { color:#ffffff; padding:8px 20px; background:#8e3022; display:inline-block; text-align:center; font-size:15px; border:none; cursor: pointer;}
+.redBtn:hover { background:#666;}
+.grayBtn { color:#8e3022; padding:8px 20px; background:#e1e1e1; display:inline-block; text-align:center; font-size:15px; border:none; cursor: pointer;}
+.grayBtn:hover { background:#666; color:#fff;}
+.blueBtn  { color:#ffffff; padding:8px 20px; background:#3992fd; display:inline-block; text-align:center; font-size:15px; border:none; cursor: pointer;}
+.blueBtn:hover { background:#666;}
+.mainBlueBtn { color:#ffffff; padding:8px 20px; background:#234f92; display:inline-block; text-align:center; font-size:15px; border:none; cursor:pointer;}
+.mainBlueBtn:hover { background:#650815; }	
+
+
+input[type=button].left { background:url(../images/left.png) no-repeat left top; width:198px; height:41px; display:block; margin: 25px auto 0 auto; cursor:pointer; border:none; color:#fff;}
+input[type=button].right { background:url(../images/right.png) no-repeat left top; width:198px; height:41px; display:block; margin: 25px auto 0 auto; cursor:pointer; border:none; color:#fff;}
+input[type=button].left:hover,
+input[type=button].right:hover { background-position: left -41px;}

@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="talented_people" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c047ea03-decc-451e-9630-b59b08bca93a">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="865"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="ffb57cb9-1477-44a9-9d91-d215a1abf395"/>
+	<parameter name="TALENTED_PEOPLE_ID" class="java.lang.Long">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["D:\\SYSVIN\\2016\\i-ACE鏈結產學媒合平台\\iReport\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select * from talented_people where ID = $P{TALENTED_PEOPLE_ID}]]>
+	</queryString>
+	<field name="NAME_CH" class="java.lang.String"/>
+	<field name="NAME_EN" class="java.lang.String"/>
+	<field name="GENDER" class="java.lang.String"/>
+	<field name="EXP_YEAR" class="java.math.BigDecimal"/>
+	<field name="TEL" class="java.lang.String"/>
+	<field name="EMAIL" class="java.lang.String"/>
+	<field name="WORK_ORG" class="java.lang.String"/>
+	<field name="JOB" class="java.lang.String"/>
+	<field name="URL" class="java.lang.String"/>
+	<field name="HEAD_SHOT" class="java.awt.Image"/>
+	<field name="SPECIALTY" class="java.lang.String"/>
+	<field name="REWARD_HISTORY" class="java.lang.String"/>
+	<field name="OTHER_EXP" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="28" splitType="Stretch">
+			<staticText>
+				<reportElement x="167" y="0" width="195" height="27" forecolor="#000000" backcolor="#000000" uuid="9015f20f-b85c-438e-87d1-9cf99f006157"/>
+				<box topPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="標楷體" size="16" isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[產學人才資料]]></text>
+			</staticText>
+			<textField pattern="yyyy/MM/dd">
+				<reportElement x="502" y="9" width="53" height="18" uuid="be485b86-910e-4599-8070-c5cb663c47ff"/>
+				<textElement verticalAlignment="Bottom"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="448" y="9" width="54" height="18" forecolor="#000000" backcolor="#000000" uuid="3467c848-14b1-4165-b849-427c11b1cd8a"/>
+				<box topPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="標楷體" size="10" isBold="true" isItalic="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[列印日期：]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="233" splitType="Stretch">
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="405" y="33" width="150" height="200" uuid="c6ce77aa-99f0-43b6-b4eb-f1cd4bddec97"/>
+				<imageExpression><![CDATA[$F{HEAD_SHOT}]]></imageExpression>
+			</image>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="53" width="100" height="20" uuid="9b02c3af-4d1e-4af3-b105-b3e96d3124e1"/>
+				<textElement>
+					<font fontName="標楷體"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NAME_CH}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="100" y="53" width="100" height="20" uuid="ab09a689-a8ae-4fc6-93be-17456adb32c3"/>
+				<textElement>
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NAME_EN}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="200" y="53" width="100" height="20" uuid="4d565a35-8b1f-4dfe-9a94-ff56ef39a343"/>
+				<textElement>
+					<font fontName="標楷體"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{GENDER}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="300" y="53" width="100" height="20" uuid="02d85b43-d08b-415a-90b2-6b960a6f20e6"/>
+				<textElement>
+					<font fontName="標楷體"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{EXP_YEAR} == null ? "" : $F{EXP_YEAR} + "年")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="33" width="61" height="20" forecolor="#000000" backcolor="#000000" uuid="c86090f6-1907-4d3f-9812-f263ee01e054"/>
+				<box topPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[姓名(中)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="61" height="25" forecolor="#999999" backcolor="#000000" uuid="0f66cbe9-73da-4081-a039-73c61be266e0"/>
+				<box topPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font fontName="標楷體" size="14" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[基本資料]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="405" y="0" width="61" height="25" forecolor="#999999" backcolor="#000000" uuid="8751f961-fa29-443a-bdf6-796956f2c642"/>
+				<box topPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font fontName="標楷體" size="14" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[照片]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="33" width="61" height="20" forecolor="#000000" backcolor="#000000" uuid="1a66f6fa-e489-4f65-94a4-36e7f5775a8c"/>
+				<box topPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[姓名(英)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="33" width="61" height="20" forecolor="#000000" backcolor="#000000" uuid="26af3f73-f229-4eba-9e96-eb8c8b3370a9"/>
+				<box topPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[性別]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="33" width="82" height="20" forecolor="#000000" backcolor="#000000" uuid="668fa60d-8cb0-4a7f-a862-3e8193b26df2"/>
+				<box topPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[產學經驗]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="73" width="61" height="20" forecolor="#000000" backcolor="#000000" uuid="8c406d3a-d07d-4444-848d-2b83742cb356"/>
+				<box topPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[連絡電話]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="93" width="200" height="20" uuid="b0b5d52a-3bb5-4055-82ea-e112e327da2b"/>
+				<textFieldExpression><![CDATA[$F{TEL}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="200" y="73" width="61" height="20" forecolor="#000000" backcolor="#000000" uuid="5eacb4b0-06ee-4b84-880e-cca01063da43"/>
+				<box topPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[e-mail]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="200" y="93" width="200" height="20" uuid="952ed8b0-2d86-45f6-9f69-f332c7fa7a30"/>
+				<textFieldExpression><![CDATA[$F{EMAIL}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="113" width="61" height="20" forecolor="#000000" backcolor="#000000" uuid="afc484bc-9e52-4cf2-86b9-ef675d95d644"/>
+				<box topPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[現職單位]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="133" width="300" height="20" uuid="d1fbcc79-106f-4a43-8607-6913930dc0bb"/>
+				<textElement>
+					<font fontName="標楷體"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{WORK_ORG}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToTallestObject" x="300" y="133" width="100" height="20" uuid="364277ca-691c-4791-81e4-a3c0042e6c03"/>
+				<textElement>
+					<font fontName="標楷體"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{JOB}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="300" y="113" width="61" height="20" forecolor="#000000" backcolor="#000000" uuid="fc69460b-34e3-49cc-9b5f-4a785a23599d"/>
+				<box topPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[現職職位]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="153" width="61" height="20" forecolor="#000000" backcolor="#000000" uuid="ea2623f3-ca35-4fe9-84cf-0fc4216d6624"/>
+				<box topPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[網站連結]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="173" width="400" height="20" uuid="6b0fe496-ee62-4f7d-a3c1-0c87fa847e4b"/>
+				<textFieldExpression><![CDATA[$F{URL}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="40">
+			<staticText>
+				<reportElement x="0" y="0" width="61" height="20" forecolor="#000000" backcolor="#000000" uuid="b137d38b-060c-467c-b65a-108cbbe71352"/>
+				<box topPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[領域]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="0" y="20" width="555" height="20" uuid="15e61087-b025-4b48-83c9-728efe5f1325"/>
+				<subreportParameter name="TALENTED_PEOPLE_ID">
+					<subreportParameterExpression><![CDATA[$P{TALENTED_PEOPLE_ID}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "talentedPeopleDomain.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="56">
+			<staticText>
+				<reportElement x="0" y="0" width="61" height="20" forecolor="#000000" backcolor="#000000" uuid="629ea424-07d9-4efb-9d6f-9da2cf0c59f6"/>
+				<box topPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[合作專長]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="20" width="555" height="23" uuid="68a72d50-a018-4cec-a5d4-892c9957e028"/>
+				<textElement>
+					<font fontName="標楷體"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{SPECIALTY}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="90">
+			<staticText>
+				<reportElement x="0" y="0" width="85" height="25" forecolor="#999999" backcolor="#000000" uuid="8cd2021e-1b34-41e4-81aa-4416357cdaa8"/>
+				<box topPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font fontName="標楷體" size="14" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[重要研發成果]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="0" y="24" width="555" height="50" uuid="f21ebdd1-57df-4f1b-8c99-59d6aaba7e5d"/>
+				<subreportParameter name="TALENTED_PEOPLE_ID">
+					<subreportParameterExpression><![CDATA[$P{TALENTED_PEOPLE_ID}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "talentedPeopleRdResult.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="90">
+			<staticText>
+				<reportElement x="0" y="0" width="146" height="24" forecolor="#999999" backcolor="#000000" uuid="14f5a6ff-9cfd-4dbf-8b16-5e96b14e5f0b"/>
+				<box topPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font fontName="標楷體" size="14" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[成果移轉及授權案例]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="0" y="24" width="555" height="50" uuid="404b778c-7da8-4a80-94b8-929041249e5d"/>
+				<subreportParameter name="TALENTED_PEOPLE_ID">
+					<subreportParameterExpression><![CDATA[$P{TALENTED_PEOPLE_ID}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "talentedPeopleTransferCase.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="90">
+			<staticText>
+				<reportElement x="0" y="0" width="146" height="24" forecolor="#999999" backcolor="#000000" uuid="38cd777f-9683-4ce9-a649-4ba956d50f7c"/>
+				<box topPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font fontName="標楷體" size="14" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[主要產學合作計畫案例]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="0" y="24" width="555" height="50" uuid="f5635c87-bd4a-438e-b408-22e1669b39b3"/>
+				<subreportParameter name="TALENTED_PEOPLE_ID">
+					<subreportParameterExpression><![CDATA[$P{TALENTED_PEOPLE_ID}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "talentedPeopleMainProject.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="111">
+			<staticText>
+				<reportElement x="0" y="0" width="146" height="24" forecolor="#999999" backcolor="#000000" uuid="747da8d0-050e-433b-8d0a-d2fd7be9cfdb"/>
+				<box topPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font fontName="標楷體" size="14" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[產學獲獎事蹟]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="24" width="555" height="20" isPrintWhenDetailOverflows="true" uuid="d7da96f7-8d23-4562-aba4-5c74960da528"/>
+				<textFieldExpression><![CDATA[$F{REWARD_HISTORY}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="56" width="146" height="24" forecolor="#999999" backcolor="#000000" uuid="6747f9bc-1783-4ac3-a4ff-fa865f07d003"/>
+				<box topPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font fontName="標楷體" size="14" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[其他產業相關經驗]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="80" width="555" height="20" isPrintWhenDetailOverflows="true" uuid="b56c4378-7766-4ad1-ae26-6ef01187d818"/>
+				<textFieldExpression><![CDATA[$F{OTHER_EXP}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

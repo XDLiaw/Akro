@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="talentd_people_rd_result" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="c047ea03-decc-451e-9630-b59b08bca93a">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="ffb57cb9-1477-44a9-9d91-d215a1abf395"/>
+	<subDataset name="dataset1" uuid="56e0462c-2d03-4a33-aeab-bbe9f08c8e6a"/>
+	<parameter name="TALENTED_PEOPLE_ID" class="java.lang.Long">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select RD.NAME, RD.TYPE, RD.INVENTER, RD.OWNER, RD.PATENT_NO, oc.NAME as COUNTRY, RD.PATENT_PERIOD_S, RD.PATENT_PERIOD_E, RD.ABSTRACT, RD.USAGE from TALENTED_PEOPLE_RD_RESULT RD
+join OPT_COUNTRY oc on RD.OPT_COUNTRY_ID = oc.id
+WHERE TALENTED_PEOPLE_ID = $P{TALENTED_PEOPLE_ID}]]>
+	</queryString>
+	<field name="NAME" class="java.lang.String"/>
+	<field name="TYPE" class="java.lang.String"/>
+	<field name="INVENTER" class="java.lang.String"/>
+	<field name="OWNER" class="java.lang.String"/>
+	<field name="PATENT_NO" class="java.lang.String"/>
+	<field name="COUNTRY" class="java.lang.String"/>
+	<field name="PATENT_PERIOD_S" class="java.sql.Date"/>
+	<field name="PATENT_PERIOD_E" class="java.sql.Date"/>
+	<field name="ABSTRACT" class="java.lang.String"/>
+	<field name="USAGE" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="165" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="5" width="98" height="20" forecolor="#000000" backcolor="#000000" uuid="823d76cb-5d37-4c8e-9918-82c7be121404"/>
+				<box topPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[1.研發成果名稱]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="25" width="130" height="20" uuid="5ff16821-332f-45fb-aa33-5c79e18a013f"/>
+				<textElement>
+					<font fontName="標楷體"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NAME}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="140" y="5" width="98" height="20" forecolor="#000000" backcolor="#000000" uuid="afb05e66-7280-4b72-a834-e7b609784e5d"/>
+				<box topPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[2.型式]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="140" y="25" width="130" height="20" uuid="8932f686-fafa-483b-8ca9-90eb5cc070ac"/>
+				<textElement>
+					<font fontName="標楷體"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TYPE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="5" width="103" height="20" forecolor="#000000" backcolor="#000000" uuid="60d5dce8-37dd-4316-ab62-1d60af91773d"/>
+				<box topPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[3.發明人(創作人)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="280" y="25" width="130" height="20" uuid="7084647f-524b-4248-8645-526cadb2fdbb"/>
+				<textElement>
+					<font fontName="標楷體"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{INVENTER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="420" y="5" width="103" height="20" forecolor="#000000" backcolor="#000000" uuid="5f269142-8c50-46f5-9d41-739eb397d79b"/>
+				<box topPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[4.所有權人]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="420" y="25" width="130" height="20" uuid="1492ef20-d189-4374-9cbb-1b3965b2efa8"/>
+				<textElement>
+					<font fontName="標楷體"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{OWNER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="45" width="98" height="20" forecolor="#000000" backcolor="#000000" uuid="8f117c72-d894-4a65-b280-d63548210457"/>
+				<box topPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[5.專利號/申請號]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="65" width="130" height="20" uuid="5985327f-2863-4d31-b373-de2e18d8a7b3"/>
+				<textFieldExpression><![CDATA[$F{PATENT_NO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="140" y="45" width="98" height="20" forecolor="#000000" backcolor="#000000" uuid="8e708406-182f-4dce-946a-49ca9d0e13c7"/>
+				<box topPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[6.國別]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="140" y="65" width="130" height="20" uuid="4d2a3cef-8e75-4035-8507-c6b4fcdf703c"/>
+				<textElement>
+					<font fontName="標楷體"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{COUNTRY}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="45" width="98" height="20" forecolor="#000000" backcolor="#000000" uuid="26523b97-452a-4e0c-916a-00e3e4df7a58"/>
+				<box topPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[7.專利期間]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="280" y="65" width="270" height="20" uuid="5a1e4b93-943d-4ecf-bc44-1d94b32ca23c"/>
+				<textElement>
+					<font fontName="標楷體"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PATENT_PERIOD_S}.toString() + " ~ " + $F{PATENT_PERIOD_E}.toString()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="85" width="98" height="20" forecolor="#000000" backcolor="#000000" uuid="4407291b-1523-47b3-a58f-0e3c92de76db"/>
+				<box topPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[8.摘要]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="105" width="550" height="20" isPrintWhenDetailOverflows="true" uuid="abf4439a-0a1f-41be-a8f3-93ecabeec942"/>
+				<textElement>
+					<font fontName="標楷體"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ABSTRACT}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="125" width="98" height="20" forecolor="#000000" backcolor="#000000" uuid="4f1d79ed-d6a5-4967-9a3a-db173208c670"/>
+				<box topPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[9.應用產業/範圍]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="0" y="145" width="550" height="20" uuid="be5e3220-1c6b-44ca-8cf2-f415e008f766"/>
+				<textElement>
+					<font fontName="標楷體"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{USAGE}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="Float" x="0" y="4" width="555" height="1" forecolor="#999999" uuid="220609fe-bb24-4bd9-8795-97e87020238c"/>
+				<graphicElement>
+					<pen lineStyle="Dotted" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

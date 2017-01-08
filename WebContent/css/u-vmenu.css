@@ -1,0 +1,18 @@
+/* -- 展開選單-- */
+.u-vmenu > ul { padding-bottom:100px;}
+.u-vmenu ul li { width: 186px; list-style: none;}
+.u-vmenu ul li img { margin-right:10px;}
+.u-vmenu ul ul { display: none;}
+.u-vmenu > ul > li { background: none;}
+.u-vmenu ul li a { display: block; font-size: 0.93em; color: #FFF; text-decoration: none; outline: none; padding: 15px;}
+.u-vmenu ul li a:hover { padding: 15px; display: block; font-size: 0.93em; color: #FFF; background:#3d727c; text-decoration: none; outline: none;}
+.u-vmenu > ul > li > a { padding: 15px;}
+.u-vmenu > ul > li > ul > li > a { padding: 5px 7px 5px 20px; background:#bad2e2; color:#044a7b; font-size:0.81em;}
+.u-vmenu > ul > li > ul > li > a:hover { padding: 5px 7px 5px 20px; background:#e0ebf2; color:#06426d; font-size:0.81em;}
+.u-vmenu > ul > li > ul > li > ul > li > a { padding-left: 100px;}
+.u-vmenu > ul > li > ul > li > ul > li > ul > li > a { padding-left: 135px;}
+/*.u-vmenu > ul > li > a:hover, .u-vmenu > ul > li > ul > li > a:hover, .u-vmenu > ul > li > ul > li > ul > li > a:hover, .u-vmenu > ul > li > ul > li > ul > li > ul > li > a:hover { background:#0a5f9a;}*/
+.u-vmenu ul li a[data-option='on']{ background:#2872a6;}
+.u-vmenu ul li a[data-option='off'] { background:#2872a6;}
+.u-vmenu ul li a:hover[data-option='on']{ background: #064f82;}
+.u-vmenu ul li a:hover[data-option='off'] { background: #064f82;}

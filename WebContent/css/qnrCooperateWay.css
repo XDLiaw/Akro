@@ -1,0 +1,61 @@
+.top-desc {
+	padding: 15px;
+	margin-bottom: 10px;
+	border: 1px solid transparent;
+	border-radius: 3px;
+	background-color: #F8F8FF;
+	color: #0000a0;
+	font-size: 1.15em;
+}
+
+table.table-qnrCooperateWay th {
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1a5cb2+0,3081dd+100 */
+	background: #1a5cb2; /* Old browsers */
+	background: -moz-linear-gradient(top, #1a5cb2 0%, #3081dd 100%);
+	/* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #1a5cb2 0%, #3081dd 100%);
+	/* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #1a5cb2 0%, #3081dd 100%);
+	/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a5cb2',
+		endColorstr='#3081dd', GradientType=0); /* IE6-9 */
+		
+	border: solid 1px;
+	white-space: nowrap;
+	font-size: 1.15em;
+}
+
+table.table-qnrCooperateWay td {
+	font-size: 1.15em;
+}
+
+.subTitle-qnrCooperateWay {
+	text-align: center;
+	font-size: 1.25em;
+	font-weight: bold;
+	color: #666;
+	border-bottom: #0a5f9a 1px dotted;
+	padding: 0 0 20px 24px;
+	margin-bottom: 20px;
+	display: block;
+	position: relative;
+}
+
+.PDPL-detail-desc {
+	padding: 15px;
+	margin-bottom: 23px;
+	border: 1px solid transparent;
+	border-radius: 3px;
+	background-color: #EEEEEE;
+	border-color: #505050;
+	color: #000000;
+}
+
+.applicant-data {
+	overflow-y: auto;
+	padding: 15px;
+	margin-bottom: 23px;
+	border: 1px solid transparent;
+	border-color: #000000;
+	font-size: 1.15em;
+}

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="true" />
+	<!-- <constant name="struts.ui.theme" value="simple"/> -->
+	<constant name="struts.ui.theme" value="bootstrap" />
+	<constant name="struts.multipart.maxSize" value="-1" />
+	<constant name="struts.ognl.allowStaticMethodAccess" value="true"/> 
+	
+
+	<package name="default" namespace="/" extends="struts-default">
+		<interceptors>
+			<interceptor name="akroSession" class="akro.interceptor.SessionInterceptor"/>
+			<interceptor name="akroBackendlogin" class="akro.interceptor.LoginInterceptor"/>
+			<interceptor name="akroBackendAuth" class="akro.interceptor.AuthInterceptor"/>
+		
+			<interceptor-stack name="akroBackEnd">
+				<interceptor-ref name="akroSession" />
+				<interceptor-ref name="akroBackendlogin" />
+				<interceptor-ref name="akroBackendAuth" />
+				<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+		</interceptors>
+
+		<default-action-ref name="index" />
+	
+		<global-results>
+			<result name="error">/WEB-INF/jsp/error.jsp</result>
+<!-- 			<result name="login" type="redirectAction"> -->
+<!-- 				<param name="namespace">/login</param> -->
+<!-- 				<param name="actionName">login</param> -->
+<!-- 			</result> -->
+			<result name="login">/WEB-INF/jsp/login.jsp</result>
+		</global-results>
+
+		<global-exception-mappings>
+			<exception-mapping exception="java.lang.Exception" result="error"/>
+		</global-exception-mappings>
+
+		<action name="index">
+			<!-- <result>/WEB-INF/jsp/backend/home/index.jsp</result> -->
+			<result type="redirectAction">
+				<param name="namespace">/home</param>
+				<param name="actionName">init</param>
+			</result>
+		</action>
+	</package>
+
+	<include file="configs/akro-sys-struts.xml" />
+	<!-- Add packages here -->
+
+</struts>

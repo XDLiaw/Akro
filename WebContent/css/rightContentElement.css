@@ -1,0 +1,109 @@
+.rightContent h2.itemTitle { font-size:1.25em; font-weight: bold; color:#666; border-bottom:#0a5f9a 1px dotted; padding:0 0 20px 24px; margin-bottom:20px; background:url(../images/icon_Edit-L.png) no-repeat left top; display:block; position:relative;}
+.rightContent h2.Down {border:none; margin-bottom:0;}
+
+/* -------------------------------------------------------------------------- */
+
+.rightContent .searchZone { position:relative;}
+.rightContent .searchZone ul { width:89%; margin-bottom:40px;}
+/* .rightContent .searchZone li { width:31%; margin:0 2% 10px 0; float:left;} */
+/* .rightContent .searchZone li input, */
+/* .rightContent .searchZone li select { margin:0 15px 0 5px; border:#e6eff5 1px solid; font-size:1em; padding: 7px 5px; width:100%; font-size:0.91em; font-family:"微軟正黑體";} */
+.rightContent .searchZone .send { position:absolute; right:0; top:0; width:10%;}
+.rightContent .searchZone .send input[type=button], 
+.rightContent .searchZone .send input[type=submit] { margin-bottom:10px;}
+
+/* -------------------------------------------------------------------------- */
+
+/* .rightContent ul { margin-bottom:40px;} */
+.rightContent li { float:left; margin-bottom:15px; margin-right:1%; font-size:1.12em;}
+.rightContent ul > li > ul { margin-bottom:10px;}
+.rightContent ul > li > ul > li { font-size: 16px; float:none; margin-bottom:10px;}
+
+.rightContent li.all { width:99%; margin-right:1%;}
+.rightContent li.half { width:49%; margin-right:1%;}
+.rightContent li.third { width:32%; margin-right:1%;}
+.rightContent li.twoThird { width: 65%; margin-right:1%;}
+.rightContent li.quarter { width:24%; margin-right:1%;}
+.rightContent li.threeFourth { width:74; margin-right:1%;}
+.rightContent li.eighth { width:11.5%; margin-right:1%;}
+.rightContent li.threeEighth { width:36.5%; margin-right:1%;}
+.rightContent li.fiveEighth { width:61.5%; margin-right:1%;}
+.rightContent li.sevenEighth { width:86.5%; margin-right:1%;}
+
+.rightContent li select { width:100%; border:#e6eff5 1px solid; padding: 7px 5px; font-size:0.80em; font-family:"微軟正黑體";}
+.rightContent li input[type=date],
+.rightContent li input[type=datetime],
+.rightContent li input[type=email],
+.rightContent li input[type=month],
+.rightContent li input[type=week],
+.rightContent li input[type=number],
+.rightContent li input[type=range],
+.rightContent li input[type=search],
+.rightContent li input[type=tel],
+.rightContent li input[type=text],
+.rightContent li input[type=password],
+.rightContent li textarea { width:100%; border:#e6eff5 1px solid; padding: 7px 5px; font-size:0.91em; font-family:"微軟正黑體";}
+.rightContent li input[type=checkbox],
+.rightContent li input[type=radio] { margin-right:8px; }
+.rightContent li div.border-text { min-height:37.6px; width:100%; border:#e6eff5 1px solid; padding: 5px 5px; font-size:0.91em; font-family:"微軟正黑體"; color:black; background: #FFFFFF; }
+
+/* -------------------------------------------------------------------------- */
+
+.rightContent table { margin-bottom:30px; width:100% }
+.rightContent table tr:hover { background:#f4f8fb;}
+.rightContent table th { background: url(../images/thBG.gif) repeat-x; height:40px; line-height:150%; vertical-align:middle; text-align:left; color:#fff; font-size:0.81em; padding:0 5px;}
+.rightContent table td { border-bottom:#ccc 1px dotted; vertical-align:middle; text-align:left; padding:5px 5px; font-size:0.81em; color:#606060; line-height:20px;}
+.rightContent table td.plan { font-size:1em; line-height:26px; color:#175987;}
+.rightContent table td a:link { color:#3b91af;}
+.rightContent table td a:hover { color:#890107;}
+
+.rightContent table tr.text-align-center > th, td { text-align: center; }
+.rightContent table th.text-align-center,
+.rightContent table td.text-align-center { text-align:center; }
+
+/* -------------------------------------------------------------------------- */
+
+.rightContent b { color:#5b92b9; font-weight:bold; font-size:14px; display:inline-block; margin-right:4px; white-space:nowrap;}
+
+.rightContent .horizontalList div.checkbox,
+.rightContent .horizontalList div.radio { float:left; margin-right:2%;}
+
+.rightContent a:link, a:visited { color:#066b8f; text-decoration:none;}
+.rightContent a:hover, a:active { color:#890107; text-decoration:none;} 
+
+.rightContent div.subForm { background: #c1e0ff; padding: 15px; margin-bottom:30px;}
+
+.rightContent div.search-btn-block { width: 100%; text-align: center; margin: 20px auto 30px auto; }
+.rightContent div.search-btn-block input { margin-right:1%; }
+.rightContent div.bottom-btn-block { width: 100%; text-align: center; margin: 40px auto 40px auto; }
+.rightContent div.bottom-btn-block input { margin-right:1%; }
+
+.rightContent textarea { width:100% }
+
+
+/* -------------------------------------------------------------------------- */
+
+.row { float: left; width:100%; margin:5px 0 5px 0; line-height:40px; }
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12{
+	position: relative;
+	float: left;
+	min-height: 1px;
+	padding-left: 5px;
+	padding-right: 5px;
+	line-height: 40px;
+}
+.col-1  { width: 8.33333333%; }
+.col-2  { width: 16.66666667%; }
+.col-3  { width: 25%; }
+.col-4  { width: 33.33333333%; }
+.col-5  { width: 58.33333333%; }
+.col-6  { width: 50%; }
+.col-7  { width: 58.33333333%; }
+.col-8  { width: 66.66666667%; }
+.col-9  { width: 75%; }
+.col-10 { width: 83.33333333%; }
+.col-11 { width: 91.66666667%; }
+.col-12 { width: 100%; }
+
+
+

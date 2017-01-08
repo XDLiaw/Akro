@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="consulting" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c047ea03-decc-451e-9630-b59b08bca93a">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="ffb57cb9-1477-44a9-9d91-d215a1abf395"/>
+	<parameter name="consultingId" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT cs.NAME, cs.ORGANIZATION,
+( CASE WHEN oot.NAME='其他' THEN cs.ORG_TYPE_OTHER ELSE oot.NAME END ) ORG_TYPE,
+( CASE WHEN oc.NAME='其他' THEN cs.CONSULT_TYPE_OTHER ELSE oc.NAME END ) CONSULT_TYPE,
+( CASE WHEN oi.NAME='其他' THEN cs.INDUSTRY_OTHER ELSE oi.NAME END ) INDUSTRY,
+cs.PHONE, cs.EMAIL, cs.CONSULT_DATE, cs.CONTENT
+FROM CONSULTING cs LEFT JOIN OPT_ORG_TYPE oot ON cs.ORG_TYPE_CODE = oot.CODE
+LEFT JOIN OPT_CONSULT oc ON cs.CONSULT_TYPE_CODE=oc.CODE
+LEFT JOIN OPT_INDUSTRY oi ON cs.INDUSTRY_CODE=oi.CODE
+where cs.ID = $P{consultingId}]]>
+	</queryString>
+	<field name="NAME" class="java.lang.String"/>
+	<field name="ORGANIZATION" class="java.lang.String"/>
+	<field name="ORG_TYPE" class="java.lang.String"/>
+	<field name="CONSULT_TYPE" class="java.lang.String"/>
+	<field name="INDUSTRY" class="java.lang.String"/>
+	<field name="PHONE" class="java.lang.String"/>
+	<field name="EMAIL" class="java.lang.String"/>
+	<field name="CONSULT_DATE" class="java.sql.Timestamp"/>
+	<field name="CONTENT" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="27" splitType="Stretch">
+			<staticText>
+				<reportElement x="220" y="0" width="112" height="27" forecolor="#000000" backcolor="#000000" uuid="c94a4b6c-03da-468a-a658-9a09f43365db"/>
+				<box topPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="標楷體" size="16" isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[諮詢服務]]></text>
+			</staticText>
+			<textField pattern="yyyy/MM/dd">
+				<reportElement x="502" y="9" width="53" height="18" uuid="7b4d8fab-fc86-4429-8f9b-cd5c895a7cf8"/>
+				<textElement verticalAlignment="Bottom"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="448" y="9" width="54" height="18" forecolor="#000000" backcolor="#000000" uuid="e0f4c85d-1f38-4e9a-b419-4177a7e8b22d"/>
+				<box topPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="標楷體" size="10" isBold="true" isItalic="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[列印日期：]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="43" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="61" height="23" forecolor="#000000" backcolor="#000000" uuid="d9cc981b-4837-48bd-9f9f-2809bbd908a6"/>
+				<box topPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[姓名]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="23" width="260" height="20" uuid="fb98afd0-b6d4-4957-87ab-b672296b7ec3"/>
+				<textElement>
+					<font fontName="標楷體" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NAME}]]></textFieldExpression>
+			</textField>
+			<textField pattern="yyyy/MM/dd" isBlankWhenNull="true">
+				<reportElement x="260" y="23" width="295" height="20" uuid="0db47fc6-e004-4d31-8f38-133b21b520d7"/>
+				<textElement>
+					<font fontName="標楷體" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CONSULT_DATE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="260" y="0" width="61" height="23" forecolor="#000000" uuid="21776e60-d5b9-40d4-b083-489ba6363e90"/>
+				<box topPadding="5"/>
+				<textElement>
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[諮詢日期]]></text>
+			</staticText>
+		</band>
+		<band height="43">
+			<textField>
+				<reportElement x="0" y="23" width="260" height="20" uuid="9a05a1a4-8a20-4386-9623-f6ba7f99c8e1"/>
+				<textElement>
+					<font fontName="標楷體" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ORG_TYPE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="260" y="0" width="61" height="23" forecolor="#000000" backcolor="#000000" uuid="acc56797-25cd-4198-a27c-5ec2307f025c"/>
+				<box topPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[單位名稱]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="61" height="23" forecolor="#000000" backcolor="#000000" uuid="1c0268cc-e995-47c0-b9c1-67424fdd4921"/>
+				<box topPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[單位類型]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="260" y="23" width="295" height="20" uuid="7a0682c1-429d-4511-b048-21fd78e99046"/>
+				<textElement>
+					<font fontName="標楷體" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ORGANIZATION}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="43">
+			<staticText>
+				<reportElement x="0" y="0" width="61" height="23" forecolor="#000000" uuid="0cbea2a0-88dc-40ab-a2fe-b143718f5e0d"/>
+				<box topPadding="5"/>
+				<textElement>
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[諮詢類型]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="23" width="260" height="20" uuid="ab9a26cd-68be-42f6-8dcb-a2c59b177f64"/>
+				<textElement>
+					<font fontName="標楷體" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CONSULT_TYPE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="260" y="0" width="73" height="23" forecolor="#000000" uuid="652fa51c-e056-4ef2-b3a6-faca667cf56a"/>
+				<box topPadding="5"/>
+				<textElement>
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[產業/領域別]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement x="260" y="23" width="295" height="20" uuid="6c2b76b5-ddb8-4cda-a8f8-26308f3d122f"/>
+				<textElement>
+					<font fontName="標楷體" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{INDUSTRY}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="43">
+			<staticText>
+				<reportElement x="0" y="0" width="61" height="23" forecolor="#000000" uuid="3c5cd86f-35d6-4cc9-8353-608afa4b6694"/>
+				<box topPadding="5"/>
+				<textElement>
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[聯絡電話]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="260" y="23" width="295" height="20" uuid="a09ae149-bf3c-430c-8ec3-2f6aac0aa8f8"/>
+				<textElement>
+					<font fontName="標楷體" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{EMAIL}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="23" width="260" height="20" uuid="a35e2f9e-278b-400f-b658-dd0f3824c877"/>
+				<textElement>
+					<font fontName="標楷體" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PHONE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="260" y="0" width="61" height="23" forecolor="#000000" uuid="865078e6-edae-46d4-bddd-58f1bfa6e7bc"/>
+				<box topPadding="5"/>
+				<textElement>
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[E-MAIL]]></text>
+			</staticText>
+		</band>
+		<band height="43">
+			<staticText>
+				<reportElement x="0" y="0" width="106" height="23" forecolor="#000000" uuid="2e029cdc-2886-4e93-a33e-5f8ecfb04960"/>
+				<box topPadding="5"/>
+				<textElement>
+					<font fontName="標楷體" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[內容說明]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="23" width="555" height="20" isPrintWhenDetailOverflows="true" uuid="283468de-5050-4d50-ac79-efd86ed24d90"/>
+				<textElement>
+					<font fontName="標楷體" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CONTENT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

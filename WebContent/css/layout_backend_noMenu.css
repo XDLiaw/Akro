@@ -1,0 +1,84 @@
+/* ---reset.css--- */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+table input[type="text"] {width: 100%;}
+/* ---reset.css--- */
+
+html { font-family: "微軟正黑體", "Segoe UI"; font-size:16px; -webkit-text-size-adjust:none;}
+
+* { -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */}
+
+.clear { clear:both;}
+
+/* --電腦版型------------------------------------- */
+
+body { background:url(../images/BG.gif) repeat-x;}
+
+header { max-width:1100px; width:100%; position:relative; margin:0 auto; height:121px;}
+header .LOGO { position: absolute; top:25px; left:2px;}
+header .Link { position:absolute; top:76px; right:19px;}
+header .Link a { font-size:0.87em; display:inline-block;}
+header .Link input[type=text] { margin:0 15px 0 5px; border:#CCC 1px solid; font-size:1em; padding: 7px 5px;}
+header a.login { color:#fff; padding:10px 20px; background:#8e3022; display:inline-block; font-size:15px; text-decoration:none;}
+header a.login:hover { background:#666;}
+
+div.pageTitle { padding: 0 0 0 33px; font-size:1.5em; color:#044470; height:78px; line-height:85px; font-weight:bold; letter-spacing:2px;}
+article { width:1100px; margin:0 auto; clear:both; line-height:1.6em; }
+#wrapper { width:1100px; margin:40px auto; clear:both; line-height:1.6em; position:relative;}
+
+.rightContent { width:1100px; float:right; padding:25px 0 40px 33px;}
+
+/* -- Footer -- */
+footer { background: #f0f0f0; height:107px; width:100%;}
+footer .con { width:1100px; margin:0 auto;}
+footer .subLink { float:left;}
+footer .contact { float:left; font-size:0.81em; color:#b4b4b4; text-align:left; line-height:1.9em; padding:15px 0 0 0; margin-left:33px;}
+footer .ssl-logo { float:right; line-height:1.9em; padding:15px 0 0 0;}
+
+
+
+
+
