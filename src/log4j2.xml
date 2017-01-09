@@ -4,8 +4,8 @@
 		<Console name="STDOUT" target="SYSTEM_OUT">
 			<PatternLayout pattern="%d{HH:mm:ss.SS} %-5p (%F:%L) --- %m%n" />
 		</Console>
- 		<RollingFile name="DailyFile" fileName="iace-logs/log.txt" filePattern="iace-logs/log-%d{yyyyMMdd}.txt">
-<!--  	<RollingFile name="DailyFile" fileName="iace-logs/log.txt" filePattern="iace-logs/log-%d{yyyyMMdd-HH}~%i.txt">			 -->
+ 		<RollingFile name="DailyFile" fileName="akro-logs/log.txt" filePattern="akro-logs/log-%d{yyyyMMdd}.txt">
+<!--  	<RollingFile name="DailyFile" fileName="akro-logs/log.txt" filePattern="akro-logs/log-%d{yyyyMMdd-HH}~%i.txt">			 -->
 			<PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SS} %-5p [%t] (%C:%L) --- %m%n" />
 			<Policies>
 				<TimeBasedTriggeringPolicy interval="1" modulate="true" />
@@ -13,7 +13,7 @@
 			</Policies>
 			<DefaultRolloverStrategy max="10"/>
 		</RollingFile>
-		<RollingFile name="error-log" fileName="iace-logs/errorlog.txt" filePattern="iace-logs/errorlog-%d{yyyyMMdd}.txt">
+		<RollingFile name="error-log" fileName="akro-logs/errorlog.txt" filePattern="akro-logs/errorlog-%d{yyyyMMdd}.txt">
 			
 			<PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SS} %-5p [%t] (%C:%L) --- %m%n" />
 			<Policies>
